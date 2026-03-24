@@ -31,7 +31,7 @@ public class Main {
 
         List<Product> result2 =
                 products.stream()
-                        .filter(isAffordable::validate)
+                        .filter(isAffordable.negate()::validate)
                         .toList();
         System.out.println(result2);
 
@@ -52,7 +52,7 @@ public class Main {
 
         List<Product> result5 =
                 products.stream()
-                        .filter(isAffordable.or(inStock)::validate)
+                        .filter(isAffordable.negate()::validate)
                         .toList();
         System.out.println(result5);
 
